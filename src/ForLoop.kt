@@ -3,19 +3,19 @@
 
 fun main(){
 
-    var myArray = mutableListOf<Int>()
-    var sum = 0
-    var avg = 0f
+    val myArray = mutableListOf<Int>()
+    var avg = 0.0
     var userInput: Int? = 0
     //Exercise 2 - Hard
     println("enter 5 numbers")
     for (i in 0..4) {
         userInput = readLine()?.toInt()
         if (userInput != null) {
-            myArray.add(userInput)
+            avg += userInput/5.0
         }
     }
-    avg = (myArray.reduce { acc, element -> acc + element } / myArray.size).toFloat()
+    //reduce - define an accumulator and the element of the array to be used in operation -> define the operation
+    //avg = (myArray.reduce { acc, element -> acc + element } / 5).toFloat()
     println("media: $avg")
 
 
