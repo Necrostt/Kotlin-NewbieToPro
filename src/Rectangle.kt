@@ -2,6 +2,11 @@ class Rectangle(
     val a: Double,
     val b: Double,
 ):Shape("Rectangle") {
+    
+    constructor(a: Double): this(a,a)
+
+    constructor(a: Int, b: Int): this(a.toDouble(),b.toDouble())
+
     init {
         println("$name crated with a = $a and b = $b")
 
