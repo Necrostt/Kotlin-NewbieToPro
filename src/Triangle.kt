@@ -13,9 +13,9 @@ class Triangle(
         println("$name perimeter is: ${perimeter()}")
     }
 
-    fun perimeter(): Double = a + b + c
+    override fun perimeter(): Double = a + b + c
 
-    fun area(): Double {
+    override fun area(): Double {
         val semiPerimeter = perimeter()/2
         val area = sqrt(semiPerimeter * (semiPerimeter - a) * (semiPerimeter - b) * (semiPerimeter - c))
         return area
