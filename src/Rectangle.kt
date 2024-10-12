@@ -1,7 +1,17 @@
+import kotlin.random.Random
+
+
 class Rectangle(
     val a: Double,
     val b: Double,
 ):Shape("Rectangle") {
+    companion object{
+        fun randomRectangle():Rectangle{
+            val a = Random.nextDouble(1.0,10.0)
+            val b = Random.nextDouble(1.0,10.0)
+            return Rectangle(a,b)
+        }
+    }
     
     constructor(a: Double): this(a,a)
 
