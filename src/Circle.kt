@@ -12,6 +12,9 @@ class Circle(
     }
 
     init {
+        if (radius < 0) {
+            throw NegativeRadiusException()
+        }
         println("$name created with radius = $radius")
         println("$name area is: ${area()}")
         println("$name perimeter is: ${perimeter()}")
@@ -22,3 +25,5 @@ class Circle(
     override fun perimeter() = 2 * radius * ImportantNumbers.PI
 
 }
+class NegativeRadiusException: Exception("It's not possible to create a circle with a negative radius")
+
