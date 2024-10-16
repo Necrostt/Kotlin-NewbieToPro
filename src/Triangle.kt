@@ -1,4 +1,5 @@
 import kotlin.math.sqrt
+import kotlin.random.Random
 
 class Triangle(
     val a: Double,
@@ -6,10 +7,18 @@ class Triangle(
     val c: Double
 ): Shape("Triangle") {
 
+    companion object {
+        fun randomTriangle(): Triangle {
+            val a = Random.nextDouble(5.0,15.0)
+            val b = Random.nextDouble(5.0,15.0)
+            val c = Random.nextDouble(5.0,15.0)
+            return Triangle(a,b,c)
+        }
+    }
 
     init {
         println("$name created with a = $a, b = $b and c = $c")
-        println("$name area is: ${area()}")
+        println("$name area is: ${String.format("%.2f",area())}")
         println("$name perimeter is: ${perimeter()}")
     }
 

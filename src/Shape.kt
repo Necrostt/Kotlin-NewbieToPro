@@ -5,6 +5,8 @@ abstract class Shape(
         println("I'm the super class!")
     }
 
+    constructor(name: String, vararg dimensions: Double) : this(name)
+
     abstract fun area(): Double
 
     abstract fun perimeter(): Double
